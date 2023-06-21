@@ -1,0 +1,42 @@
+[2023-06-19T13:50:46.160+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: process-employees.create_employees_temp_table scheduled__2023-06-18T00:00:00+00:00 [queued]>
+[2023-06-19T13:50:46.169+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: process-employees.create_employees_temp_table scheduled__2023-06-18T00:00:00+00:00 [queued]>
+[2023-06-19T13:50:46.170+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-19T13:50:46.170+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 1
+[2023-06-19T13:50:46.170+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-19T13:50:46.184+0000] {taskinstance.py:1300} INFO - Executing <Task(PostgresOperator): create_employees_temp_table> on 2023-06-18 00:00:00+00:00
+[2023-06-19T13:50:46.190+0000] {standard_task_runner.py:55} INFO - Started process 17947 to run task
+[2023-06-19T13:50:46.192+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'process-employees', 'create_employees_temp_table', 'scheduled__2023-06-18T00:00:00+00:00', '--job-id', '13', '--raw', '--subdir', 'DAGS_FOLDER/dag1.py', '--cfg-path', '/tmp/tmp6nq_nj5w']
+[2023-06-19T13:50:46.193+0000] {standard_task_runner.py:83} INFO - Job 13: Subtask create_employees_temp_table
+[2023-06-19T13:50:46.261+0000] {task_command.py:388} INFO - Running <TaskInstance: process-employees.create_employees_temp_table scheduled__2023-06-18T00:00:00+00:00 [running]> on host 994d2c74a088
+[2023-06-19T13:50:46.333+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=process-employees
+AIRFLOW_CTX_TASK_ID=create_employees_temp_table
+AIRFLOW_CTX_EXECUTION_DATE=2023-06-18T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-06-18T00:00:00+00:00
+[2023-06-19T13:50:46.334+0000] {sql.py:254} INFO - Executing: 
+            DROP TABLE IF EXISTS employees_temp;
+            CREATE TABLE employees_temp (
+                "Serial Number" NUMERIC PRIMARY KEY,
+                "Company Name" TEXT,
+                "Employee Markme" TEXT,
+                "Description" TEXT,
+                "Leave" INTEGER
+            );
+[2023-06-19T13:50:46.342+0000] {base.py:73} INFO - Using connection ID 'tutorial_pg_conn' for task execution.
+[2023-06-19T13:50:46.538+0000] {base.py:73} INFO - Using connection ID 'tutorial_pg_conn' for task execution.
+[2023-06-19T13:50:46.541+0000] {sql.py:375} INFO - Running statement: 
+            DROP TABLE IF EXISTS employees_temp;
+            CREATE TABLE employees_temp (
+                "Serial Number" NUMERIC PRIMARY KEY,
+                "Company Name" TEXT,
+                "Employee Markme" TEXT,
+                "Description" TEXT,
+                "Leave" INTEGER
+            );, parameters: None
+[2023-06-19T13:50:46.557+0000] {taskinstance.py:1323} INFO - Marking task as SUCCESS. dag_id=process-employees, task_id=create_employees_temp_table, execution_date=20230618T000000, start_date=20230619T135046, end_date=20230619T135046
+[2023-06-19T13:50:46.605+0000] {local_task_job.py:208} INFO - Task exited with return code 0
+[2023-06-19T13:50:46.630+0000] {taskinstance.py:2578} INFO - 0 downstream tasks scheduled from follow-on schedule check
